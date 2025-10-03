@@ -25,3 +25,8 @@ This Max/MSP patch repurposes a number box as a stylised Palestinian flag. On ba
 ## License
 MIT License (for the code).  
 Creative Commons Attribution (CC-BY) for documentation and media.
+
+## Preview
+<img width="1787" height="618" alt="Immagine 2025-10-03 192920" src="https://github.com/user-attachments/assets/bcc4e854-ceac-496d-94ad-8e441efdf965" />
+
+
