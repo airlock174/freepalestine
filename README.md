@@ -1,32 +1,55 @@
-# FreePalestine — Max/MSP patch
+# FreePalestine — Max/MSP patch (v1.1)
 
 ## About
-This Max/MSP patch repurposes a number box as a stylised Palestinian flag. On bang it scripts three `panel` objects (black, white, green) aligned to the number. The patch sets the number’s background alpha to 0, recolors the built-in triangle to red, and makes the number text bold and a slightly darker red for legibility.
+This Max/MSP patch provides a custom skin for `number` boxes, stylising them as the Palestinian flag.  
+On bang, it scripts three `panel` objects (black, white, green) aligned to the number box.  
+The patch sets the number’s background alpha to 0, recolors the built-in triangle to red, and makes the text bold with a slightly darker red tone for better legibility.
+
+Version 1.1 introduces compatibility with `@presentation 1` objects, an internal logic rewrite, and a new **variant 2 (triscale 1.8)** with proportions closer to the real flag.
+
+---
 
 ## Instructions
-1. De-encapsulate this patcher in the target patch.  
-2. Connect the number box:  
-   - to the 2nd outlet of `getattr patching_rect`  
-   - to the 1st outlet of `p freepalestine`  
-3. Bang to spawn the panels.  
-4. Select the number + the three panels and choose **Group Objects**.  
-5. If you move the number manually, delete the panels and bang again (manual moves cause rounding, which may create gaps between stripes).
+1. De-encapsulate this patcher in the target patch (in **Patching Mode**).  
+2. Connect the target number box:  
+   - to the **2nd outlet** of `getattr`  
+   - to the **1st outlet** of `p free`  
+3. Choose **ver.1** or **ver.2** from the menu.  
+4. Press the **bang** button to create the panels.  
+5. Select the number and the three panels, then choose **Group Objects**.  
+6. If you move the number manually, delete the panels and bang again (manual moves cause rounding, which may create small gaps).  
+7. Optionally, press **reset colors** to restore the default number colors (delete the panels manually if needed).
+
+---
+
+## Changes in v1.1
+- Added compatibility with objects using `@presentation 1`.  
+- Rewritten internal logic using `uzi`, `sprintf`, and `deferlow`.  
+- Introduced **variant 2** with `triscale 1.8` for more accurate flag proportions.  
+- Added visual arrows indicating connection outlets.  
+- Added **color reset** option.  
+- Corrected red tone from `255 0 0` to `238 42 53`.
+
+---
 
 ## Notes
 - Works with both **int** and **float** number boxes.  
-- Tested in Max 9.0.5.  
-- Design choices applied to the number box:  
+- Tested in **Max 9.0.5**.  
+- Design modifications applied to the number box:  
   - transparent background (alpha 0)  
-  - red triangle (chevron)  
-  - bold text, red with a slightly darker tone for readability  
-- Intentionally stylised: the chevron is the recolored built-in triangle rather than a drawn polygon.  
-- Suitable for performances, installations, or generative/visual art.
+  - red built-in triangle  
+  - bold text in slightly darker red for contrast  
+- The chevron uses the number’s built-in triangle rather than a custom polygon.  
+- Suitable for live performances, installations, or symbolic interface design.
+
+---
 
 ## License
-MIT License (for the code).  
-Creative Commons Attribution (CC-BY) for documentation and media.
+- **MIT License** — for patch logic and code.  
+- **CC-BY 4.0** — for documentation and images.
+
+---
 
 ## Preview
-<img width="1787" height="618" alt="Immagine 2025-10-03 192920" src="https://github.com/user-attachments/assets/bcc4e854-ceac-496d-94ad-8e441efdf965" />
-
+<img width="1133" height="427" alt="Immagine 2025-10-05 175804" src="https://github.com/user-attachments/assets/6ac097e7-63b4-49cd-8a27-338e734c9668" />
 
