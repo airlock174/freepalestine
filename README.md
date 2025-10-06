@@ -1,55 +1,68 @@
-# FreePalestine — Max/MSP patch (v1.1)
+# freepalestine — Max/MSP Patch (v1.2)
 
-## About
-This Max/MSP patch provides a custom skin for `number` boxes, stylising them as the Palestinian flag.  
-On bang, it scripts three `panel` objects (black, white, green) aligned to the number box.  
-The patch sets the number’s background alpha to 0, recolors the built-in triangle to red, and makes the text bold with a slightly darker red tone for better legibility.
+## Overview
 
-Version 1.1 introduces compatibility with `@presentation 1` objects, an internal logic rewrite, and a new **variant 2 (triscale 1.8)** with proportions closer to the real flag.
+**freepalestine** is a Max/MSP patch that applies a custom visual style to number boxes, using the colors of the **Palestinian flag**.  
+On *bang*, it scripts three aligned panel objects (black, white, and green) and restyles the number box to create a symbolic, minimal visual design.
+
+---
+
+## Features
+
+- Automatic creation of black, white, and green panels aligned with the number box
+- Transparent number box background (`alpha 0`)  
+- Red built-in triangle (chevron): **ver.1** = default triscale; **ver.2** = triscale 1.8 
+- Bold text in a slightly darker red for contrast  
+- Works with both `int` and `float` number boxes  
+- Non-destructive: does not modify the number box’s core parameters  
+- Includes a **clear** function to restore default appearance and remove spawned panels  
 
 ---
 
 ## Instructions
-1. De-encapsulate this patcher in the target patch (in **Patching Mode**).  
-2. Connect the target number box:  
-   - to the **2nd outlet** of `getattr`  
-   - to the **1st outlet** of `p free`  
-3. Choose **ver.1** or **ver.2** from the menu.  
-4. Press the **bang** button to create the panels.  
-5. Select the number and the three panels, then choose **Group Objects**.  
-6. If you move the number manually, delete the panels and bang again (manual moves cause rounding, which may create small gaps).  
-7. Optionally, press **reset colors** to restore the default number colors (delete the panels manually if needed).
+
+1. **De-encapsulate** this patcher inside the target patch (in *Patching Mode*).  
+2. Connect the **target number box**:
+   - to the **2nd outlet** of `getattr`
+   - to the **1st outlet** of `p free`
+3. Select **ver.1** or **ver.2** from the *umenu*.  
+4. Press the **bang** to apply the flag design.  
+5. Each activation removes previously spawned panels at the same position before creating new ones.  
+6. Select the number box and the three panels, then choose **Group Objects**.  
+7. Delete this patcher after grouping.  
+8. If necessary, press **clear** to restore the default number box colors and remove panels in their spawn position.
+
+> Panels that have been moved from their original position are not deleted automatically and must be removed manually if necessary.
 
 ---
 
-## Changes in v1.1
-- Added compatibility with objects using `@presentation 1`.  
-- Rewritten internal logic using `uzi`, `sprintf`, and `deferlow`.  
-- Introduced **variant 2** with `triscale 1.8` for more accurate flag proportions.  
-- Added visual arrows indicating connection outlets.  
-- Added **color reset** option.  
-- Corrected red tone from `255 0 0` to `238 42 53`.
+## Technical Notes
 
----
-
-## Notes
-- Works with both **int** and **float** number boxes.  
-- Tested in **Max 9.0.5**.  
-- Design modifications applied to the number box:  
-  - transparent background (alpha 0)  
-  - red built-in triangle  
-  - bold text in slightly darker red for contrast  
-- The chevron uses the number’s built-in triangle rather than a custom polygon.  
-- Suitable for live performances, installations, or symbolic interface design.
+- Compatible with both integer and float number boxes.  
+- Tested with **Max 9.0.5**.  
+- Uses built-in Max scripting for UI element creation and deletion.  
+- No external dependencies or third-party objects required.  
+- The patch modifies only visual attributes — all functional behavior remains unchanged.
 
 ---
 
 ## License
-- **MIT License** — for patch logic and code.  
-- **CC-BY 4.0** — for documentation and images.
+
+- **MIT License** — for patch logic and code  
+- **CC-BY 4.0** — for documentation and images
 
 ---
 
 ## Preview
-<img width="1133" height="427" alt="Immagine 2025-10-05 175804" src="https://github.com/user-attachments/assets/6ac097e7-63b4-49cd-8a27-338e734c9668" />
+<img width="1496" height="613" alt="Immagine 2025-10-06 232130" src="https://github.com/user-attachments/assets/73683cdd-4fb3-4662-9b5f-0280c76309f4" />
+
+---
+
+## Credits
+
+Developed as an open-source Max/MSP resource for creative interface design and visual expression.  
+This patch may be freely used, studied, and modified under the terms of its license.
+
+
+
 
