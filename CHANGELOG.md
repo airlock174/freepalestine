@@ -5,6 +5,21 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.2] - 2025-10-06
+
+### Added
+- Automatic removal of panels previously spawned in the same position before generating new ones.  
+
+### Changed
+- **“reset colors”** renamed to **“clear”**, now restoring both the number’s colors and removing panels if they are in their original spawn position.  
+- Updated internal **README** with clarified behavior and new instructions.
+
+### Fixed
+- Fixed a bug where the flag could mix elements from **ver.1** and **ver.2** when the *umenu* was not used after loading the patcher
+  *(added `loadmess` initialization)*.
+
+---
+
 ## [1.1] - 2025-10-05
 
 ### Added
