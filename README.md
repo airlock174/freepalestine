@@ -1,6 +1,7 @@
 # freepalestine — Max/MSP UI Patch (v1.2)
 
-### A minimalistic visual mod that turns Max’s number boxes into symbolic renditions of the Palestinian flag.
+> A Max/MSP patch that reimagines the number box as a symbol of visual solidarity, restyled in the colors of the Palestinian flag and intended for public-facing creative works.
+
 
 ---
 
