@@ -85,7 +85,7 @@ Panels moved from their original position are not automatically deleted and must
 ## Preview
 <img width="1496" height="613" alt="Immagine 2025-10-06 232130" src="https://github.com/user-attachments/assets/45671241-e224-4f1c-b3cc-ee569350fe1f" />
 
-*The patch as it appears when opened in Max — showing the two available flag versions (“ver.1” and “ver.2”).*
+*The patch as it appears when opened in Max — showing the two available flag versions (**ver.1** and **ver.2**).*
 
 ---
 
