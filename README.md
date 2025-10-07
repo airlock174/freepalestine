@@ -23,7 +23,7 @@ A dedicated **clear** `bang` is also provided to restore the default appearance 
 - Transparent number box background (`alpha 0`) with **bold dark-red text** for visual contrast  
 - Panels automatically adapt to the **size** of the connected number box  
 - Compatible with objects using `@presentation 1` — correctly distinguishes and supports both `patching_rect` and `presentation_rect`  
-- Automatically replaces previously spawned panels at the same position, allowing multiple flag generations or design variations without overlap  
+- Automatically replaces previously spawned panels at the same position, allowing multiple flag generations or design variations without overlap*¹*  
 - **Non-destructive:** modifies only visual attributes, leaving all functional parameters of the number box intact. 
 Includes a dedicated **clear** `bang` to restore the default appearance and remove panels spawned at the same position.
 
@@ -51,7 +51,7 @@ The patch can be applied in two ways:
    - to the **2nd outlet** of `getattr`  
    - to the **1st outlet** of `p free`
 2. Select the desired version (`ver.1` or `ver.2`) from the `umenu`, then press the `bang` to apply the flag-style design.  
-   Each activation removes previously spawned panels at the same position before creating new ones.  
+   Each activation removes previously spawned panels at the same position before creating new ones.*¹*  
 3. Select the number box and the three panels, then choose **Group Objects**.  
 4. Once the flag layout has been generated, this patcher is no longer required and can be removed.
 
@@ -59,9 +59,7 @@ The patch can be applied in two ways:
 
 ## Cleanup
 
-If needed, press **clear** to restore the default number box colors and remove all panels in their spawn position.  
-Panels moved from their original position are not automatically deleted and must be removed manually if necessary  
-— addressing this limitation would require embedding a JavaScript file, which would compromise the patch’s standalone nature.
+If needed, press **clear** to restore the default number box colors and remove all panels in their original spawn position.*¹*
 
 ---
 
@@ -71,7 +69,10 @@ Panels moved from their original position are not automatically deleted and must
 - Uses native Max scripting for UI element creation and cleanup  
 - In **ver.2**, panel positioning includes a small horizontal offset relative to the triangle to prevent antialiasing artifacts  
 - Fully supports both **Patching** and **Presentation** modes  
-- Modifies only **visual attributes** — functional behavior remains unchanged  
+- Modifies only **visual attributes** — functional behavior remains unchanged
+>*¹ Panels are replaced or cleared only when found in their original spawn position.  
+If moved elsewhere, they are not automatically deleted and must be removed manually if necessary.  
+Implementing positional tracking would require an embedded JavaScript file, which would compromise the patch’s standalone nature.*
 
 ---
 
