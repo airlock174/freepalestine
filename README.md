@@ -24,8 +24,8 @@ A dedicated **clear** `bang` is also provided to restore the default appearance 
 - Panels automatically adapt to the **size** of the connected number box  
 - Compatible with objects using `@presentation 1` — correctly distinguishes and supports both `patching_rect` and `presentation_rect`  
 - Automatically replaces previously spawned panels at the same position, allowing multiple flag generations or design variations without overlap  
-- Non-destructive: preserves all number box parameters  
-- Includes a dedicated **clear** `bang` to restore the default appearance and remove panels spawned at the same position
+- **Non-destructive:** modifies only visual attributes, leaving all functional parameters of the number box intact. 
+Includes a dedicated **clear** `bang` to restore the default appearance and remove panels spawned at the same position.
 
 ---
 
@@ -38,7 +38,10 @@ A dedicated **clear** `bang` is also provided to restore the default appearance 
 
 ## Installation
 
-1. **De-encapsulate** this patcher inside your target patch (in *Patching Mode*).  
+The patch can be applied in two ways:
+
+- **Copy and paste** its contents directly into the target patch — the fastest option, requiring no additional setup.  
+- Or place `freepalestine.maxpat` in a folder read by Max, create an object named `freepalestine`, and **de-encapsulate** it (in *Patching Mode*) to reveal all elements.
 
 ---
 
@@ -50,7 +53,7 @@ A dedicated **clear** `bang` is also provided to restore the default appearance 
 2. Select the desired version (`ver.1` or `ver.2`) from the `umenu`, then press the `bang` to apply the flag-style design.  
    Each activation removes previously spawned panels at the same position before creating new ones.  
 3. Select the number box and the three panels, then choose **Group Objects**.  
-4. Delete this patcher after grouping.  
+4. Once the flag layout has been generated, this patcher is no longer required and can be removed.
 
 ---
 
